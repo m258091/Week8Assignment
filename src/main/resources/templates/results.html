@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>View All Computers</title>
+</head>
+<body> 
+<form> 
+<table> 
+<tr th:each="currentComputer : ${computers}" >
+<tr th:each="currentComputer : ${computers}" >  
+<td th:text="${currentComputer.id}" />     
+<td th:text="${currentComputer.make}" />     
+<td th:text="${currentComputer.model}" />     
+<td th:text="${currentComputer.year}" />     
+<td th:text="${currentComputer.listPrice}" />   
+<td th:text="${currentComputer.manufacturer.name}" />     
+<td th:text="${currentComputer.manufacturer.city}" />     
+<td th:text="${currentComputer.manufacturer.state}" />
+<td><a th:href= "@{/edit/{id}(id=${currentComputer.id})}" >Edit</a></td> 
+<td><a th:href="@{/delete/{id}(id=${currentComputer.id})}">Delete</a></td> 
+</tr> 
+</table> 
+</form> 
+<a href= "../inputComputer" >Add a new computer</a> 
+</body>
+</html>

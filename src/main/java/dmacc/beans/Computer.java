@@ -7,6 +7,11 @@ import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 @Entity
 public class Computer {
 
@@ -20,10 +25,6 @@ public class Computer {
 	@Autowired
 	private Manufacturer manufacturer;
 	
-	public Computer() {
-		super();
-	}
-	
 	public Computer(String make) {
 		this.make = make;
 	}
@@ -33,60 +34,6 @@ public class Computer {
 		this.model = model;
 		this.year = year;
 		this.listPrice = listPrice;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getMake() {
-		return make;
-	}
-
-	public void setMake(String make) {
-		this.make = make;
-	}
-
-	public String getModel() {
-		return model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-	}
-
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
-	}
-
-	public double getListPrice() {
-		return listPrice;
-	}
-
-	public void setListPrice(double listPrice) {
-		this.listPrice = listPrice;
-	}
-
-	public Manufacturer getManufacturer() {
-		return manufacturer;
-	}
-
-	public void setManufacturer(Manufacturer manufacturer) {
-		this.manufacturer = manufacturer;
-	}
-	
-	@Override
-	public String toString() {
-		return "Computer [id=" + id + ", make=" + make + ", model=" + model + ", year=" + year + ", listPrice="
-				+ listPrice + ", manufacturer=" + manufacturer + "]";
 	}
 	
 }
